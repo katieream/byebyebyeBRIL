@@ -65,9 +65,10 @@ The following are my current set parameters and my recommended ranges to remain 
 
 ## Crafting Histograms
 
-It's important to visualize the distribution of data for the detectors. 
+Before crafting histograms, run the ```process_fill``` function to append the data to csv files in order to study many of the fills at once.
 
-Finally, after performing channel selection, make sure to append the data to the csv files by running the function ```process_fill``` and run the cells following to visualize the distribution and information pertaining to all runs you have previously examined. 
+It's important to visualize the distribution of data for the detectors. We have multiple histograms displayed throughout the code. The first histogram is easily recognized by the heading cell ```Display histograms for all fills studied to see how PLT data has shifted overtime```, which may take a minute or so to run depending on how many fills you have appended to the csv files. For this histogram, each fill is plotted as its own histogram so the data is not stacked. By comparison, the following histogram plots the stacked version with a gaussian mixing matrix fit - however this most likely won't work as PLT data tends to shift a lot and become un-gaussian in shape. 
 
+We can also visualize a set number of fills closest in date-time to the fill just studied to determine if there are any immediate shifts in behavior in the detector channels that lend itself to removing that channel from the final data - thus catching information that wasn't caught by the channel selection tool. A table is then crafted to visualize the overall information about the channels and can give a ranking as to which channels are best and which are worst.
 
-Et voila! You have performed channel and/or anomaly detection for PLT and BCM1F data! 
+Et voila! You've just performed channel and/or anomaly detection for PLT and BCM1F data! 
