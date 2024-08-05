@@ -27,6 +27,25 @@ from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 ```
 
+Sometimes SWAN has issues with installing adtk even using the ```!pip install``` command. If this is the case run this following cell:
+
+```
+import site
+import sys
+user_site = site.USER_SITE
+if user_site not in sys.path:
+    sys.path.append(user_site)
+    print(f"Added {user_site} to Python path.")
+print("Updated Python path:", sys.path)
+
+try:
+    from adtk.data import validate_series
+    print("adtk module imported successfully.")
+except ModuleNotFoundError:
+    print("ModuleNotFoundError: No module named 'adtk'")
+```
+
+
 Ensure that when loading in the data it is an hd5 file. If the columns need to be renamed, ensure they are. For the PLT based code, the columns that are important are the individual plt channels - currently named ```pltagg_columns = [f'pltaggzero_{i}' for i in range(16)]```, the date-time column, and the average HF and BCM1F data columns, respectively named ```'hfetlumi_avgraw'``` and ```'bcm1flumi_avgraw'```.
 
 One thing this code relies upon is comparing all channels to a reference. We choose this reference by comparing all channels that are known to be good in a particular fill, calculate the median point for every point across all channels, and then compare the actual channels against this median channel; whichever channel is closest overall is therefore the reference, which is used later on in the code. The code for this is listed below and also found in the python notebook: 
