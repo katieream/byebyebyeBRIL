@@ -71,4 +71,6 @@ It's important to visualize the distribution of data for the detectors. We have 
 
 We can also visualize a set number of fills closest in date-time to the fill just studied to determine if there are any immediate shifts in behavior in the detector channels that lend itself to removing that channel from the final data - thus catching information that wasn't caught by the channel selection tool. A table is then crafted to visualize the overall information about the channels and can give a ranking as to which channels are best and which are worst.
 
+The ```bcm1f_anomaly_algorithm.ipynb``` is practically the same format just with slightly different variable names. Note in both notebooks there are guiding comments and header cells that match this README file. If there are questions or issues running the code, reach out to kmream@umich.edu.
+
 Et voila! You've just performed channel and/or anomaly detection for PLT and BCM1F data! 
