@@ -27,7 +27,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 ```
 
-Sometimes SWAN has issues with installing adtk even using the ```!pip install``` command. Note we are using software stack 105a, number of cores = 2, and memory = 16 GB. If this is the case run this following cell:
+Sometimes SWAN has issues with installing adtk even using the ```!pip install``` command. Note we are using software stack 105a, platform = AlmaLinux9 (gcc13) number of cores = 2, and memory = 16 GB. If this is the case run this following cell:
 
 ```
 import site
